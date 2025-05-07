@@ -1,0 +1,257 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Buckle Buddy Survey Results</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 2rem;
+            background-color: #000000;
+            color: #ffffff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .chart-container {
+            margin-bottom: 60px;
+            max-width: 700px;
+            width: 100%;
+            background-color: #1a1a1a;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 0 10px rgba(255,255,255,0.1);
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+        .chart-container.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        canvas {
+            width: 100% !important;
+            height: auto !important;
+        }
+        h1, h2 {
+            color: #ffffff;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Buckle Buddy Survey Results</h1>
+    
+    <div class="chart-container" id="container1">
+        <h2>1. How satisfied are you with the overall functionality of the child car seat buckle alert system?</h2>
+        <canvas id="chart1"></canvas>
+    </div>
+    
+    <div class="chart-container" id="container2">
+        <h2>2. How easy was it to install the buckle alert system in your car seat?</h2>
+        <canvas id="chart2"></canvas>
+    </div>
+    
+    <div class="chart-container" id="container3">
+        <h2>3. Did you encounter any issues while setting up the buckle alert system?</h2>
+        <canvas id="chart3"></canvas>
+    </div>
+    
+    <div class="chart-container" id="container4">
+        <h2>4. How effective do you feel the alert system is at notifying you when your child is left in the car?</h2>
+        <canvas id="chart4"></canvas>
+    </div>
+    
+    <div class="chart-container" id="container5">
+        <h2>5. On a scale from 1 to 5, how accurate do you find the alerts from the system?</h2>
+        <canvas id="chart5"></canvas>
+    </div>
+    
+    <div class="chart-container" id="container6">
+        <h2>6. How clear and noticeable is the alert sound or notification?</h2>
+        <canvas id="chart6"></canvas>
+    </div>
+    
+    <div class="chart-container" id="container7">
+        <h2>7. Have you ever experienced a false alarm (alert when the child is not in the car)?</h2>
+        <canvas id="chart7"></canvas>
+    </div>
+    
+    <div class="chart-container" id="container8">
+        <h2>8. How confident do you feel knowing the buckle alert system is in place while your child is in the car?</h2>
+        <canvas id="chart8"></canvas>
+    </div>
+    
+    <div class="chart-container" id="container9">
+        <h2>9. How does the alert system integrate well with your daily routines or habits when traveling with your child?</h2>
+        <canvas id="chart9"></canvas>
+    </div>
+    
+    <div class="chart-container" id="container10">
+        <h2>10. How often do you check the backseat to check that your child has left the car, before you leave the car?</h2>
+        <canvas id="chart10"></canvas>
+    </div>
+    
+    <div class="chart-container" id="container11">
+        <h2>11. Without any help from the buckle buddy, do you think you would sometimes get distracted and possibly leave your child in the car?</h2>
+        <canvas id="chart11"></canvas>
+    </div>
+    
+    <div class="chart-container" id="container12">
+        <h2>13. How would you rate the design and comfort of the buckle on the car seat?</h2>
+        <canvas id="chart12"></canvas>
+    </div>
+    
+    <div class="chart-container" id="container13">
+        <h2>14. How responsive and easy to use was the app?</h2>
+        <canvas id="chart13"></canvas>
+    </div>
+    
+    <div class="chart-container" id="container14">
+        <h2>15. How much peace of mind has the buckle alert system given you as a parent?</h2>
+        <canvas id="chart14"></canvas>
+    </div>
+    
+    
+    <script>
+        const chartData = [
+            
+            {
+                id: 'chart1',
+                labels: ["Satisfied", "Very Satisfied"],
+                values: [4, 16]
+            },
+            
+            {
+                id: 'chart2',
+                labels: ["Easy", "Neutral", "Very Easy"],
+                values: [9, 4, 7]
+            },
+            
+            {
+                id: 'chart3',
+                labels: ["No", "Yes (please specify in the feedback section)"],
+                values: [17, 3]
+            },
+            
+            {
+                id: 'chart4',
+                labels: ["Effective", "Very Effective"],
+                values: [9, 11]
+            },
+            
+            {
+                id: 'chart5',
+                labels: ["1 (Very Inaccurate)", "3 (Neutral)", "4 (Somewhat Accurate)", "5 (Very Accurate)"],
+                values: [2, 1, 1, 16]
+            },
+            
+            {
+                id: 'chart6',
+                labels: ["Clear and Noticeable", "Neutral", "Very Clear and Noticeable"],
+                values: [7, 1, 12]
+            },
+            
+            {
+                id: 'chart7',
+                labels: ["No", "Yes (please specify in the feedback section)"],
+                values: [19, 1]
+            },
+            
+            {
+                id: 'chart8',
+                labels: ["Confident", "Very Confident"],
+                values: [3, 17]
+            },
+            
+            {
+                id: 'chart9',
+                labels: ["Neutral", "Very Well", "Well"],
+                values: [1, 11, 8]
+            },
+            
+            {
+                id: 'chart10',
+                labels: ["Always", "Never", "Often", "Rarely", "Sometimes"],
+                values: [5, 2, 4, 4, 5]
+            },
+            
+            {
+                id: 'chart11',
+                labels: ["No", "Yes"],
+                values: [2, 18]
+            },
+            
+            {
+                id: 'chart12',
+                labels: ["Excellent", "Good", "Neutral"],
+                values: [12, 7, 1]
+            },
+            
+            {
+                id: 'chart13',
+                labels: ["Easy", "Neutral", "Very Easy"],
+                values: [4, 1, 15]
+            },
+            
+            {
+                id: 'chart14',
+                labels: ["A Lot of Peace of Mind", "Some Peace of Mind"],
+                values: [17, 3]
+            },
+            
+        ];
+
+        const chartInstances = {};
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const canvasId = entry.target.querySelector('canvas').id;
+                    if (!chartInstances[canvasId]) {
+                        const ctx = document.getElementById(canvasId).getContext('2d');
+                        const chartInfo = chartData.find(c => c.id === canvasId);
+                        chartInstances[canvasId] = new Chart(ctx, {
+                            type: 'pie',
+                            data: {
+                                labels: chartInfo.labels,
+                                datasets: [{
+                                    label: 'Responses',
+                                    data: chartInfo.values,
+                                    backgroundColor: [
+                                        '#007BFF', '#66B2FF', '#FFFFFF',
+                                        '#3399FF', '#CCE5FF', '#B3D9FF'
+                                    ],
+                                    borderColor: '#000000',
+                                    borderWidth: 1
+                                }]
+                            },
+                            options: {
+                                responsive: true,
+                                plugins: {
+                                    legend: {
+                                        position: 'right',
+                                        labels: {
+                                            color: '#ffffff'
+                                        }
+                                    }
+                                }
+                            }
+                        });
+                    }
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.2
+        });
+
+        document.querySelectorAll('.chart-container').forEach(container => {
+            observer.observe(container);
+        });
+    </script>
+</body>
+</html>
