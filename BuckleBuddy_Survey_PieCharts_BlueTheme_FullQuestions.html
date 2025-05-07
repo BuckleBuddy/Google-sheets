@@ -1,0 +1,587 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Buckle Buddy Survey Results</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 2rem;
+            background-color: #000000;
+            color: #ffffff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .chart-container {
+            margin-bottom: 60px;
+            max-width: 700px;
+            width: 100%;
+            background-color: #1a1a1a;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 0 10px rgba(255,255,255,0.1);
+        }
+        canvas {
+            width: 100% !important;
+            height: auto !important;
+        }
+        h1, h2 {
+            color: #ffffff;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Buckle Buddy Survey Results</h1>
+    
+    <div class="chart-container">
+        <h2>1. How satisfied are you with the overall functionality of the child car seat buckle alert system?</h2>
+        <canvas id="chart1"></canvas>
+        <script>
+            const ctx1 = document.getElementById('chart1').getContext('2d');
+            new Chart(ctx1, {
+                type: 'pie',
+                data: {
+                    labels: ["Satisfied", "Very Satisfied"],
+                    datasets: [{
+                        label: 'Responses',
+                        data: [4, 16],
+                        backgroundColor: [
+                            '#007BFF',  // Blue
+                            '#66B2FF',  // Light Blue
+                            '#FFFFFF',  // White
+                            '#3399FF',  // Sky Blue
+                            '#CCE5FF',  // Very Light Blue
+                            '#B3D9FF'   // Pastel Blue
+                        ],
+                        borderColor: '#000000',
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    plugins: {
+                        legend: {
+                            position: 'right',
+                            labels: {
+                                color: '#ffffff'
+                            }
+                        }
+                    }
+                }
+            });
+        </script>
+    </div>
+    
+    <div class="chart-container">
+        <h2>2. How easy was it to install the buckle alert system in your car seat?</h2>
+        <canvas id="chart2"></canvas>
+        <script>
+            const ctx2 = document.getElementById('chart2').getContext('2d');
+            new Chart(ctx2, {
+                type: 'pie',
+                data: {
+                    labels: ["Easy", "Neutral", "Very Easy"],
+                    datasets: [{
+                        label: 'Responses',
+                        data: [9, 4, 7],
+                        backgroundColor: [
+                            '#007BFF',  // Blue
+                            '#66B2FF',  // Light Blue
+                            '#FFFFFF',  // White
+                            '#3399FF',  // Sky Blue
+                            '#CCE5FF',  // Very Light Blue
+                            '#B3D9FF'   // Pastel Blue
+                        ],
+                        borderColor: '#000000',
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    plugins: {
+                        legend: {
+                            position: 'right',
+                            labels: {
+                                color: '#ffffff'
+                            }
+                        }
+                    }
+                }
+            });
+        </script>
+    </div>
+    
+    <div class="chart-container">
+        <h2>3. Did you encounter any issues while setting up the buckle alert system?</h2>
+        <canvas id="chart3"></canvas>
+        <script>
+            const ctx3 = document.getElementById('chart3').getContext('2d');
+            new Chart(ctx3, {
+                type: 'pie',
+                data: {
+                    labels: ["No", "Yes (please specify in the feedback section)"],
+                    datasets: [{
+                        label: 'Responses',
+                        data: [17, 3],
+                        backgroundColor: [
+                            '#007BFF',  // Blue
+                            '#66B2FF',  // Light Blue
+                            '#FFFFFF',  // White
+                            '#3399FF',  // Sky Blue
+                            '#CCE5FF',  // Very Light Blue
+                            '#B3D9FF'   // Pastel Blue
+                        ],
+                        borderColor: '#000000',
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    plugins: {
+                        legend: {
+                            position: 'right',
+                            labels: {
+                                color: '#ffffff'
+                            }
+                        }
+                    }
+                }
+            });
+        </script>
+    </div>
+    
+    <div class="chart-container">
+        <h2>4. How effective do you feel the alert system is at notifying you when your child is left in the car?</h2>
+        <canvas id="chart4"></canvas>
+        <script>
+            const ctx4 = document.getElementById('chart4').getContext('2d');
+            new Chart(ctx4, {
+                type: 'pie',
+                data: {
+                    labels: ["Effective", "Very Effective"],
+                    datasets: [{
+                        label: 'Responses',
+                        data: [9, 11],
+                        backgroundColor: [
+                            '#007BFF',  // Blue
+                            '#66B2FF',  // Light Blue
+                            '#FFFFFF',  // White
+                            '#3399FF',  // Sky Blue
+                            '#CCE5FF',  // Very Light Blue
+                            '#B3D9FF'   // Pastel Blue
+                        ],
+                        borderColor: '#000000',
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    plugins: {
+                        legend: {
+                            position: 'right',
+                            labels: {
+                                color: '#ffffff'
+                            }
+                        }
+                    }
+                }
+            });
+        </script>
+    </div>
+    
+    <div class="chart-container">
+        <h2>5. On a scale from 1 to 5, how accurate do you find the alerts from the system?</h2>
+        <canvas id="chart5"></canvas>
+        <script>
+            const ctx5 = document.getElementById('chart5').getContext('2d');
+            new Chart(ctx5, {
+                type: 'pie',
+                data: {
+                    labels: ["1 (Very Inaccurate)", "3 (Neutral)", "4 (Somewhat Accurate)", "5 (Very Accurate)"],
+                    datasets: [{
+                        label: 'Responses',
+                        data: [2, 1, 1, 16],
+                        backgroundColor: [
+                            '#007BFF',  // Blue
+                            '#66B2FF',  // Light Blue
+                            '#FFFFFF',  // White
+                            '#3399FF',  // Sky Blue
+                            '#CCE5FF',  // Very Light Blue
+                            '#B3D9FF'   // Pastel Blue
+                        ],
+                        borderColor: '#000000',
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    plugins: {
+                        legend: {
+                            position: 'right',
+                            labels: {
+                                color: '#ffffff'
+                            }
+                        }
+                    }
+                }
+            });
+        </script>
+    </div>
+    
+    <div class="chart-container">
+        <h2>6. How clear and noticeable is the alert sound or notification?</h2>
+        <canvas id="chart6"></canvas>
+        <script>
+            const ctx6 = document.getElementById('chart6').getContext('2d');
+            new Chart(ctx6, {
+                type: 'pie',
+                data: {
+                    labels: ["Clear and Noticeable", "Neutral", "Very Clear and Noticeable"],
+                    datasets: [{
+                        label: 'Responses',
+                        data: [7, 1, 12],
+                        backgroundColor: [
+                            '#007BFF',  // Blue
+                            '#66B2FF',  // Light Blue
+                            '#FFFFFF',  // White
+                            '#3399FF',  // Sky Blue
+                            '#CCE5FF',  // Very Light Blue
+                            '#B3D9FF'   // Pastel Blue
+                        ],
+                        borderColor: '#000000',
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    plugins: {
+                        legend: {
+                            position: 'right',
+                            labels: {
+                                color: '#ffffff'
+                            }
+                        }
+                    }
+                }
+            });
+        </script>
+    </div>
+    
+    <div class="chart-container">
+        <h2>7. Have you ever experienced a false alarm (alert when the child is not in the car)?</h2>
+        <canvas id="chart7"></canvas>
+        <script>
+            const ctx7 = document.getElementById('chart7').getContext('2d');
+            new Chart(ctx7, {
+                type: 'pie',
+                data: {
+                    labels: ["No", "Yes (please specify in the feedback section)"],
+                    datasets: [{
+                        label: 'Responses',
+                        data: [19, 1],
+                        backgroundColor: [
+                            '#007BFF',  // Blue
+                            '#66B2FF',  // Light Blue
+                            '#FFFFFF',  // White
+                            '#3399FF',  // Sky Blue
+                            '#CCE5FF',  // Very Light Blue
+                            '#B3D9FF'   // Pastel Blue
+                        ],
+                        borderColor: '#000000',
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    plugins: {
+                        legend: {
+                            position: 'right',
+                            labels: {
+                                color: '#ffffff'
+                            }
+                        }
+                    }
+                }
+            });
+        </script>
+    </div>
+    
+    <div class="chart-container">
+        <h2>8. How confident do you feel knowing the buckle alert system is in place while your child is in the car?</h2>
+        <canvas id="chart8"></canvas>
+        <script>
+            const ctx8 = document.getElementById('chart8').getContext('2d');
+            new Chart(ctx8, {
+                type: 'pie',
+                data: {
+                    labels: ["Confident", "Very Confident"],
+                    datasets: [{
+                        label: 'Responses',
+                        data: [3, 17],
+                        backgroundColor: [
+                            '#007BFF',  // Blue
+                            '#66B2FF',  // Light Blue
+                            '#FFFFFF',  // White
+                            '#3399FF',  // Sky Blue
+                            '#CCE5FF',  // Very Light Blue
+                            '#B3D9FF'   // Pastel Blue
+                        ],
+                        borderColor: '#000000',
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    plugins: {
+                        legend: {
+                            position: 'right',
+                            labels: {
+                                color: '#ffffff'
+                            }
+                        }
+                    }
+                }
+            });
+        </script>
+    </div>
+    
+    <div class="chart-container">
+        <h2>9. How does the alert system integrate well with your daily routines or habits when traveling with your child?</h2>
+        <canvas id="chart9"></canvas>
+        <script>
+            const ctx9 = document.getElementById('chart9').getContext('2d');
+            new Chart(ctx9, {
+                type: 'pie',
+                data: {
+                    labels: ["Neutral", "Very Well", "Well"],
+                    datasets: [{
+                        label: 'Responses',
+                        data: [1, 11, 8],
+                        backgroundColor: [
+                            '#007BFF',  // Blue
+                            '#66B2FF',  // Light Blue
+                            '#FFFFFF',  // White
+                            '#3399FF',  // Sky Blue
+                            '#CCE5FF',  // Very Light Blue
+                            '#B3D9FF'   // Pastel Blue
+                        ],
+                        borderColor: '#000000',
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    plugins: {
+                        legend: {
+                            position: 'right',
+                            labels: {
+                                color: '#ffffff'
+                            }
+                        }
+                    }
+                }
+            });
+        </script>
+    </div>
+    
+    <div class="chart-container">
+        <h2>10. How often do you check the backseat to check that your child has left the car, before you leave the car?</h2>
+        <canvas id="chart10"></canvas>
+        <script>
+            const ctx10 = document.getElementById('chart10').getContext('2d');
+            new Chart(ctx10, {
+                type: 'pie',
+                data: {
+                    labels: ["Always", "Never", "Often", "Rarely", "Sometimes"],
+                    datasets: [{
+                        label: 'Responses',
+                        data: [5, 2, 4, 4, 5],
+                        backgroundColor: [
+                            '#007BFF',  // Blue
+                            '#66B2FF',  // Light Blue
+                            '#FFFFFF',  // White
+                            '#3399FF',  // Sky Blue
+                            '#CCE5FF',  // Very Light Blue
+                            '#B3D9FF'   // Pastel Blue
+                        ],
+                        borderColor: '#000000',
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    plugins: {
+                        legend: {
+                            position: 'right',
+                            labels: {
+                                color: '#ffffff'
+                            }
+                        }
+                    }
+                }
+            });
+        </script>
+    </div>
+    
+    <div class="chart-container">
+        <h2>11. Without any help from the buckle buddy, do you think you would sometimes get distracted and possibly leave your child in the car?</h2>
+        <canvas id="chart11"></canvas>
+        <script>
+            const ctx11 = document.getElementById('chart11').getContext('2d');
+            new Chart(ctx11, {
+                type: 'pie',
+                data: {
+                    labels: ["No", "Yes"],
+                    datasets: [{
+                        label: 'Responses',
+                        data: [2, 18],
+                        backgroundColor: [
+                            '#007BFF',  // Blue
+                            '#66B2FF',  // Light Blue
+                            '#FFFFFF',  // White
+                            '#3399FF',  // Sky Blue
+                            '#CCE5FF',  // Very Light Blue
+                            '#B3D9FF'   // Pastel Blue
+                        ],
+                        borderColor: '#000000',
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    plugins: {
+                        legend: {
+                            position: 'right',
+                            labels: {
+                                color: '#ffffff'
+                            }
+                        }
+                    }
+                }
+            });
+        </script>
+    </div>
+    
+    <div class="chart-container">
+        <h2>13. How would you rate the design and comfort of the buckle on the car seat?</h2>
+        <canvas id="chart12"></canvas>
+        <script>
+            const ctx12 = document.getElementById('chart12').getContext('2d');
+            new Chart(ctx12, {
+                type: 'pie',
+                data: {
+                    labels: ["Excellent", "Good", "Neutral"],
+                    datasets: [{
+                        label: 'Responses',
+                        data: [12, 7, 1],
+                        backgroundColor: [
+                            '#007BFF',  // Blue
+                            '#66B2FF',  // Light Blue
+                            '#FFFFFF',  // White
+                            '#3399FF',  // Sky Blue
+                            '#CCE5FF',  // Very Light Blue
+                            '#B3D9FF'   // Pastel Blue
+                        ],
+                        borderColor: '#000000',
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    plugins: {
+                        legend: {
+                            position: 'right',
+                            labels: {
+                                color: '#ffffff'
+                            }
+                        }
+                    }
+                }
+            });
+        </script>
+    </div>
+    
+    <div class="chart-container">
+        <h2>14. How responsive and easy to use was the app?</h2>
+        <canvas id="chart13"></canvas>
+        <script>
+            const ctx13 = document.getElementById('chart13').getContext('2d');
+            new Chart(ctx13, {
+                type: 'pie',
+                data: {
+                    labels: ["Easy", "Neutral", "Very Easy"],
+                    datasets: [{
+                        label: 'Responses',
+                        data: [4, 1, 15],
+                        backgroundColor: [
+                            '#007BFF',  // Blue
+                            '#66B2FF',  // Light Blue
+                            '#FFFFFF',  // White
+                            '#3399FF',  // Sky Blue
+                            '#CCE5FF',  // Very Light Blue
+                            '#B3D9FF'   // Pastel Blue
+                        ],
+                        borderColor: '#000000',
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    plugins: {
+                        legend: {
+                            position: 'right',
+                            labels: {
+                                color: '#ffffff'
+                            }
+                        }
+                    }
+                }
+            });
+        </script>
+    </div>
+    
+    <div class="chart-container">
+        <h2>15. How much peace of mind has the buckle alert system given you as a parent?</h2>
+        <canvas id="chart14"></canvas>
+        <script>
+            const ctx14 = document.getElementById('chart14').getContext('2d');
+            new Chart(ctx14, {
+                type: 'pie',
+                data: {
+                    labels: ["A Lot of Peace of Mind", "Some Peace of Mind"],
+                    datasets: [{
+                        label: 'Responses',
+                        data: [17, 3],
+                        backgroundColor: [
+                            '#007BFF',  // Blue
+                            '#66B2FF',  // Light Blue
+                            '#FFFFFF',  // White
+                            '#3399FF',  // Sky Blue
+                            '#CCE5FF',  // Very Light Blue
+                            '#B3D9FF'   // Pastel Blue
+                        ],
+                        borderColor: '#000000',
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    plugins: {
+                        legend: {
+                            position: 'right',
+                            labels: {
+                                color: '#ffffff'
+                            }
+                        }
+                    }
+                }
+            });
+        </script>
+    </div>
+    
+</body>
+</html>
